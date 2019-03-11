@@ -3,10 +3,10 @@ package com.king.faceunlockdemo;
 import java.lang.reflect.Array;
 
 /**
- * 面部识别结果bean
+ * 面部比较结果bean
  */
 
-public class FaceppBean {
+public class FaceppCompareBean {
 
 
     /**
@@ -106,4 +106,18 @@ public class FaceppBean {
         this.error_message = error_message;
     }
 
+    @Override
+    public String toString() {
+        return "FaceppCompareBean{" +
+                "time_used=" + time_used +
+                ", confidence=" + confidence +
+                ", thresholds=" + thresholds +
+                ", request_id='" + request_id + '\'' +
+                ", image_id1='" + image_id1 + '\'' +
+                ", image_id2='" + image_id2 + '\'' +
+                ", faces1=" + faces1 +
+                ", faces2=" + faces2 +
+                ", error_message='" + error_message + '\'' +
+                '}';
+    }
 }

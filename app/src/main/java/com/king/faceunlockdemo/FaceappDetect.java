@@ -22,13 +22,16 @@ import javax.net.ssl.SSLException;
  * 网络请求类
  */
 
-public class FaceappService {
+public class FaceappDetect {
 
     private static String API_KEY = "J6Kfhya5GfEdLF9-wwuivFuCDmIfOk6A";
     private static String API_SECRET = "9FZfYPH8KIcTDe5MVy2KXn7L6Ml9UKQ1";
 
 
-    public static void detectRequest(File filepath){
+    public static String detectRequest(File filepath){
+
+
+        String detectResult = null;
 
         byte[] buff = getBytesFromFile(filepath);
         String url = "https://api-cn.faceplusplus.com/facepp/v3/detect";
@@ -36,25 +39,26 @@ public class FaceappService {
         HashMap<String, byte[]> byteMap = new HashMap<>();
         map.put("api_key",API_KEY);
         map.put("api_secret",API_SECRET);
-        map.put("return_attributes", "headpose");
         byteMap.put("image_file",buff);
         try{
             byte[] bacd = post(url,map,byteMap);
 
             String str = new String(bacd);
+            detectResult = str;
+
             Log.e("FaceappService",str);
         } catch (Exception e){
             e.printStackTrace();
         }
         
-        
+        return detectResult;
     }
 
 
     private final static int CONNECT_TIME_OUT = 30000;
     private final static int READ_OUT_TIME = 50000;
     private static String boundaryString = getBoundary();
-    protected static byte[] post(String url, HashMap<String, String> map, HashMap<Object, byte[]> fileMap) throws Exception {
+    protected static byte[] post(String url, HashMap<String, String> map, HashMap<String, byte[]> fileMap) throws Exception {
         HttpURLConnection conne;
         URL url1 = new URL(url);
         conne = (HttpURLConnection) url1.openConnection();

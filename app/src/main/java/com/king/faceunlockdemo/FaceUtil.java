@@ -3,16 +3,26 @@ package com.king.faceunlockdemo;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Base64;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 
+import static android.support.v4.app.ActivityCompat.startActivityForResult;
+
 public class FaceUtil {
+
+
+
 
     public static String base64(Bitmap bitmap){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -93,5 +103,11 @@ public class FaceUtil {
         }
         return returnBm;
     }
+
+
+
+
+
+
 
 }
