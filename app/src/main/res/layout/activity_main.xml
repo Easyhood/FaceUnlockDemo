@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_conResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_picture"
+        android:layout_centerHorizontal="true"
+        android:text="比对结果:   "
+        android:layout_marginBottom="@android:dimen/app_icon_size"/>
+
 
     <RelativeLayout
         android:id="@+id/rl_picture"
@@ -21,42 +30,45 @@
         android:layout_centerHorizontal="true"
         android:layout_width="270dp"
         android:hint="请输入你的用户ID"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
     <Button
         android:id="@+id/bt_userId"
         android:layout_below="@id/rl_picture"
         android:layout_toRightOf="@id/et_userID"
         android:text="注册"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
     <Button
         android:id="@+id/bt_camera"
         android:layout_below="@id/et_userID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:text="CAMERA"/>
+        android:layout_marginLeft="60dp"
+        android:text="录入照片1"/>
     <Button
         android:id="@+id/bt_compare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/et_userID"
         android:layout_toRightOf="@id/bt_camera"
-        android:text="匹配" />
+        android:text="拍摄照片2" />
     <Button
         android:id="@+id/bt_getImage"
         android:layout_below="@id/et_userID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/bt_compare"
-        android:text="GETIMAGE"/>
+        android:text="比对"/>
     <Button
         android:id="@+id/bt_detect"
         android:layout_below="@id/et_userID"
         android:layout_toRightOf="@id/bt_getImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DETECT"/>
+        android:text="DETECT"
+        android:visibility="invisible"/>
 
 
 

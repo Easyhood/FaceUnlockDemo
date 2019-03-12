@@ -24,6 +24,7 @@ public class FaceppCompareBean {
      *   "request_id": "1469761051,ec285c20-8660-47d3-8b91-5dc2bffa0049"
      */
 
+
     private int time_used;
     private float confidence;
     private Object thresholds;
@@ -33,6 +34,8 @@ public class FaceppCompareBean {
     private Array faces1;
     private Array faces2;
     private String error_message;
+
+
 
     public int getTime_used() {
         return time_used;
@@ -105,6 +108,7 @@ public class FaceppCompareBean {
     public void setError_message(String error_message) {
         this.error_message = error_message;
     }
+
 
     @Override
     public String toString() {

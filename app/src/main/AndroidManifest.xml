@@ -3,7 +3,7 @@
     package="com.king.faceunlockdemo">
     <!-- 读取网络信息状态 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 如需使用人脸识别，还要添加： 摄相头权限，拍照需要用到 -->
+    <!-- 摄相头权限，拍照需要用到 -->
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -19,7 +19,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.king.faceunlockdemo.provider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
